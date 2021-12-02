@@ -52,7 +52,7 @@ Node* findNode(List* list, int x) {
         return NULL;
     } else {
         Node* current = list->head;
-        while (current != NULL) {
+        while (!current) {
             if (current->data == x) return current;
             current = current->next;
         }
@@ -76,7 +76,7 @@ Node* getLastNode(List* list) {
         return NULL;
     } else {
         Node* current = list->head;
-        while (current->next != NULL) {
+        while (!current->next) {
             current = current->next;
         }
         return current;
@@ -102,7 +102,7 @@ List* deleteNodeAtEnd(List* list) {
         return NULL;
     } else {
         Node* current = list->head;
-        while (current->next->next != NULL) {
+        while (!current->next->next) {
             current = current->next;
         }
         Node* aux = current->next;
@@ -117,7 +117,7 @@ List* updateList(List* list, int x, int y) {
         printf("Couldn't update the node with value x because the list it is empty.\n");
     } else {
         Node* current = list->head;
-        while (current != NULL) {
+        while (!current) {
             if (current->data == x) {
                 current->data = y;
                 return list;
@@ -132,7 +132,7 @@ List* updateList(List* list, int x, int y) {
 int getLength(List* list) {
     Node* current = list->head;
     int i = 0;
-    while (current != NULL) {
+    while (!current) {
         i++;
         current = current->next;
     }
@@ -140,7 +140,7 @@ int getLength(List* list) {
 }
 
 bool isEmpty(List* list) {{
-    if (list->head == NULL) return true;
+    if (!list->head) return true;
     return false;
 }}
 

@@ -23,5 +23,7 @@ int main() {
     printf("firstNode: %p\n", firstNode);
     printf("lastNode: %p\n", lastNode);
 
+    printf(isEmpty(list) ? "the list is empty\n" : "the list is not empty\n");
+
     return 0;
 }
